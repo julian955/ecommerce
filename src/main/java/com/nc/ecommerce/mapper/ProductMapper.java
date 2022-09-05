@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static com.nc.ecommerce.util.MapperUtil.streamListNonNull;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ProductMapper implements IMapper<Product,ProductDTO> {
 
@@ -22,6 +23,7 @@ public class ProductMapper implements IMapper<Product,ProductDTO> {
                 .image(dto.getImage())
                 .price(dto.getPrice())
                 .quantity(dto.getQuantity())
+                .user(userRepository.getReferenceById(dto.getUserId()))
                 .build();
     }
 
@@ -61,7 +63,7 @@ public class ProductMapper implements IMapper<Product,ProductDTO> {
         model.setImage(dto.getImage());
         model.setPrice(dto.getPrice());
         model.setQuantity(dto.getQuantity());
-        if (model.getUser().getId() != dto.getUserId()){
+        if (!Objects.equals(model.getUser().getId(), dto.getUserId())){
             model.setUser(userRepository.getReferenceById(dto.getUserId()));
         }
     }
