@@ -5,11 +5,13 @@ import com.nc.ecommerce.model.Order;
 import com.nc.ecommerce.repository.OrderDetailRepository;
 import com.nc.ecommerce.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 import static com.nc.ecommerce.util.MapperUtil.streamListNonNull;
 
+@Component
 public class OrderMapper implements IMapper<Order, OrderDTO>{
 
     @Autowired

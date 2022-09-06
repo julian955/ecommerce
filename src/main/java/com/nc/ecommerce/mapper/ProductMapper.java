@@ -4,12 +4,14 @@ import com.nc.ecommerce.dto.ProductDTO;
 import com.nc.ecommerce.model.Product;
 import com.nc.ecommerce.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import static com.nc.ecommerce.util.MapperUtil.streamListNonNull;
 
 import java.util.List;
 import java.util.Objects;
 
+@Component
 public class ProductMapper implements IMapper<Product,ProductDTO> {
 
     @Autowired

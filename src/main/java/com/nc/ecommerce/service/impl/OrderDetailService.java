@@ -6,10 +6,12 @@ import com.nc.ecommerce.model.OrderDetail;
 import com.nc.ecommerce.repository.OrderDetailRepository;
 import com.nc.ecommerce.service.IOrderDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class OrderDetailService implements IOrderDetailService {
 
     @Autowired
